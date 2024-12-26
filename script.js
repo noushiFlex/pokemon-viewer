@@ -27,9 +27,17 @@ function pokemonDisplay(event) {
         })
         .then(data => {
             // Afficher le nom et le nombre d'éléments si nécessaire
-            pokemonName.innerHTML = (data['name']).charAt(0).toUpperCase() + (data['name']).slice(1);
-            pokemonImage.src = data['sprites']['front_default'];
-            console.log(pokemonImage)
+            if(name.toLowerCase !== 'divine')
+                {
+                    pokemonName.innerHTML = (data['name']).charAt(0).toUpperCase() + (data['name']).slice(1);
+                    pokemonImage.src = data['sprites']['front_default'];
+                    console.log(pokemonImage)
+                }
+                else{
+                    pokemonName.innerHTML = 'Divine';
+                    pokemonImage.src = 'https://actus.zoobeauval.com/wp-content/uploads/2024/11/nouveaute_2025_beauval_rhinopitheque-755x500.png';
+                }
+
         })
 }
 
