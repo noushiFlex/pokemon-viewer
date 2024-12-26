@@ -22,24 +22,17 @@ function pokemonDisplay(event) {
         .then(response => {
             if (!response.ok) {
                 pokemonName.innerHTML = '(Pas trouve)';
-                
-                pokemonName.innerHTML = 'Divine';
-                pokemonImage.src = 'https://actus.zoobeauval.com/wp-content/uploads/2024/11/nouveaute_2025_beauval_rhinopitheque-755x500.png';
             }
             return response.json();
         })
         .then(data => {
             // Afficher le nom et le nombre d'éléments si nécessaire
             if(name.toLowerCase !== 'divine')
-                {
+                
                     pokemonName.innerHTML = (data['name']).charAt(0).toUpperCase() + (data['name']).slice(1);
                     pokemonImage.src = data['sprites']['front_default'];
                     console.log(pokemonImage)
-                }
-                else{
-                    pokemonName.innerHTML = 'Divine';
-                    pokemonImage.src = 'https://actus.zoobeauval.com/wp-content/uploads/2024/11/nouveaute_2025_beauval_rhinopitheque-755x500.png';
-                }
+                
 
         })
 }
